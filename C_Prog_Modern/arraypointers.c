@@ -1,12 +1,20 @@
 #include <stdio.h>
-#define ROWS 3
-#define COLS 4
+#include <time.h>
+#include <stdlib.h>
 
-void print_2d_array(int a[ROWS][COLS])
+// returns integer with the bounds [lower, upper)
+int get_rand_int(int lower, int upper)
+{	
+	int value = (rand() % (upper - lower)) - lower;
+
+	return value;
+}
+
+void print_2d_array(int rows, int cols, int a[rows][cols])
 {
-	for(int i =0; i<ROWS; i++)
+	for(int i =0; i<rows; i++)
 	{
-		for(int j =0; j<COLS; j++)
+		for(int j =0; j<cols; j++)
 		{
 			printf("%d ", a[i][j]);
 		}
@@ -16,18 +24,24 @@ void print_2d_array(int a[ROWS][COLS])
 
 int main(void)
 {
-	int a[ROWS][COLS];
+	srand((unsigned) time(NULL)); // random seed
+	
+	int rows, cols;
+	printf("size (rows colums): ");
+	scanf("%d %d", &rows, &cols);
+
+	int a[rows][cols];
 	int *p;
 
 	// Fill all cells with zero.
 	// Begin assigning the address of the first element of a[][] to p.
 	// Iterate through the addresses of all elements of a[][].
-	for(p = &a[0][0]; p <= &a[ROWS-1][COLS-1]; p++)
+	for(p = &a[0][0]; p <= &a[rows-1][cols-1]; p++)
 	{
-		*p = 0; // Make the value at the address currently stored in p to be zero.
+		*p = get_rand_int(0, 10); // Make the value at the address currently stored in p to be something random
 	}	
 
-	print_2d_array(a);
+	print_2d_array(rows, cols, a);
 
 	return 0;
 }
