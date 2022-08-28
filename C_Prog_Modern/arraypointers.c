@@ -16,20 +16,36 @@ void print_2d_array(int rows, int cols, int a[rows][cols])
 	{
 		for(int j =0; j<cols; j++)
 		{
-			printf("%d ", a[i][j]);
+			printf("%.2d ", a[i][j]);
 		}
 		printf("\n");
 	}
-}	
+}
+
+int sum_array(int length, int a[length])
+{
+	int sum = 0;
+	for(int i = 0; i <length; i++)
+	{
+		sum += a[i];
+	}
+
+	return sum;
+}
+
 
 int main(void)
 {
 	srand((unsigned) time(NULL)); // random seed
 	
+	// Initalize variables	
 	int rows, cols;
+
+	// Get user input
 	printf("size (rows colums): ");
 	scanf("%d %d", &rows, &cols);
 
+	// Initalize array and pointer
 	int a[rows][cols];
 	int *p;
 
@@ -39,9 +55,11 @@ int main(void)
 	for(p = &a[0][0]; p <= &a[rows-1][cols-1]; p++)
 	{
 		*p = get_rand_int(0, 10); // Make the value at the address currently stored in p to be something random
-	}	
+	}
 
 	print_2d_array(rows, cols, a);
+
+	
 
 	return 0;
 }
