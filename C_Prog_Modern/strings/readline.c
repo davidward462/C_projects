@@ -1,15 +1,20 @@
 #include <stdio.h>
 #define LENGTH 80
 
-int readLine(char str[], int n)
+int readLine(char str[], int n) // str[] is the address of the first value of the array
 {
-	int ch, i = 0;
+	int ch, i = 0; // Initialize
 
+	// While character is not a newline
 	while ( (ch = getchar()) != '\n')
 	{
-		if (i < n) str[i++] = ch;
+		if (i < n) // n is the max length allowed for the line
+		{
+			str[i] = ch;
+			i++;
+		}
 	}
-	str[i] = '\0';
+	str[i] = '\0'; // Null terminator
 	return i;
 }
 
