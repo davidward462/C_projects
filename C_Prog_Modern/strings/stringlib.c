@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-#define INPUT_LENGTH 80
+#define INPUT_LENGTH 26
 
 int readline(char str[], int n)
 {
@@ -23,10 +23,19 @@ int readline(char str[], int n)
 int main(void)
 {
 	char input[INPUT_LENGTH + 1];
+	strcpy(input, "");
+	char copied[INPUT_LENGTH + 1];
+	strcpy(copied, "");
+	printf("input: %s\ncopied: %s\n", input, copied);
+
 	printf("$ ");
 	readline(input, INPUT_LENGTH);
 
-	printf("input: %s\n", input);
+	// copy input into copied but limit chars by one less than size of copied
+	strncpy(copied, input, sizeof(copied)-1);
+	copied[sizeof(copied)-1] = '\0';
+	
+	printf("input: %s\ncopied: %s\n", input, copied);
 
 	return 0;
 }
