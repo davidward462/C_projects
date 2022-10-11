@@ -34,14 +34,37 @@ size_t stringLength(const char* s)
 	return count;	
 }
 
+// Replicate strcpy(s1,s2)
+// Append s2 onto the end of s1.
+// Return the address of s1.
+char *stringJoin(char *s1, const char *s2)
+{
+	char *p = s1;
+	
+	while (*p) // Go to the null character of s1
+	{
+		p++;
+	}
+	// Copy the value pointed to by s2 into the location pointed to by p.
+	while (*p++ = *s2++) // Generates a warning (not ideal).
+	{
+		;
+	}
+	return s1;
+}
+
 int main(void)
 {
 	// Initialize
 	char string[MAX_LENGTH];
+	char *fixed = "abcdef";
 	
 	// Get input
 	printf("$ ");
 	readline(string, MAX_LENGTH);
+
+	// Do stuff
+	stringJoin(string, fixed);
 
 	// Output
 	printf("$ %s\n", string);
