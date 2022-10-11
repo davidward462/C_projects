@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <string.h>
 
-#define MAX_LENGTH 80
+#define MAX_LENGTH 80 
 
 int readline(char input[], int maxChars)
 {
-	int ch;
-	int count;
+	int ch, count = 0;
 
 	while ((ch = getchar()) != '\n')
 	{
@@ -22,7 +21,7 @@ int readline(char input[], int maxChars)
 
 size_t stringLength(const char* s)
 {
-	size_t n;
+	size_t n = 0;
 	for (n = 0; *s != '\0'; s++)
 	{
 		n++;
@@ -33,9 +32,11 @@ size_t stringLength(const char* s)
 int main(void)
 {
 	char string[MAX_LENGTH];
+	int linesRead;
 	printf("$ ");
-	readline(string, MAX_LENGTH);
+	linesRead = readline(string, MAX_LENGTH);
 	printf("$ %s\n", string);
+	printf("$ length: %lu\n", stringLength(string));
 
 	return 0;
 }
