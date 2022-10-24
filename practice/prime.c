@@ -31,7 +31,6 @@ void TestIsPrime(int max)
 }
 
 
-
 int main(void)
 {
     TestIsPrime(100);
