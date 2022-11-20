@@ -1,8 +1,8 @@
 #include <stdio.h>
 #include <stdbool.h>
+#include "vector.h"
 
 // Basic vector operations
-
 struct Vector // in 3D space
 {
     int x;
