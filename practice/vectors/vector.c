@@ -21,14 +21,18 @@ void SetVector(vector *v, int xIn, int yIn, int zIn)
      v->z = zIn;
 }
 
-void ZeroVector(vector *v)
+void ScalarMultiply(vector *v, int scalar)
 {
-    SetVector(v, 0, 0, 0);
+    v->x = (v->x * scalar);
+    v->y = (v->y * scalar);
+    v->z = (v->z * scalar);
 }
 
-void AddVector(vector *v, vector *u, vector *r)
+void AddVector(vector *v, vector *u)
 {
-    r->x = v->x + u->x;
+    v->x = v->x + u->x;
+    v->y = v->y + u->y;
+    v->z = v->z + u->z;
 }
 
 bool VectorAreEqual(vector *v, vector *u)
@@ -43,6 +47,15 @@ bool VectorAreEqual(vector *v, vector *u)
     }
 }
 
+void SubtractVector(vector *v, vector *u)
+{
+    ScalarMultiply(u, -1);
+
+    v->x = v->x + u->x;
+    v->y = v->y + u->y;
+    v->z = v->z + u->z;
+}
+
 void PrintVector(vector *v) // pass by reference
 {
     printf("[%d %d %d]\n", v->x, v->y, v->z); // use -> instead of . because v is a pointer
@@ -50,15 +63,5 @@ void PrintVector(vector *v) // pass by reference
 
 int main(void)
 {
-
-    // begin testing
-    vector v;
-    vector *vp = &v; // variable vp holds the address to the vector v
-    
-    SetVector(vp, 0, 0, 0);
-    PrintVector(vp);
-
-    // end testing
-
     return 0;
 }
