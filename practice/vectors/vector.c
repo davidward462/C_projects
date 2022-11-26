@@ -5,9 +5,7 @@
 // Basic vector operations
 struct Vector // in 3D space
 {
-    int x;
-    int y;
-    int z;
+    int x, y, z;
 };
 
 // to avoid constantly writing 'struct'
@@ -63,5 +61,6 @@ void PrintVector(vector *v) // pass by reference
 
 int main(void)
 {
+    struct vector a = {0,0,0};
     return 0;
 }
