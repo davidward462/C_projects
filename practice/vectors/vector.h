@@ -3,9 +3,7 @@
 
 // add prototypes for vector.c
 
-struct Vector;
-
-typedef struct Vector vector;
+typedef struct Vector;
 
 void SetVector(vector *v, int x, int y, int z); 
 
