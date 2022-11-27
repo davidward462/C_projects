@@ -1,10 +1,8 @@
 #include <stdio.h>
-#include <stdbool.>
-#include "stack.c"
-
-
+#include "stack.h"
 
 int main()
 {
+    
     return 0;
 }
