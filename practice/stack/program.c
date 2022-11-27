@@ -1,12 +1,28 @@
 #include <stdio.h>
+#include <stdbool.>
 #include "stack.c"
+
+void TestIsEmpty()
+{
+    return;
+}
+
+void TestIsFull()
+{
+    return;
+}
+
+void TestPush()
+{
+    return;
+}
+
+void TestPop()
+{
+    return;
+}
 
 int main()
 {
-    Pop();
-    Push(20);
-    Push(56);
-    Push(100);
-    PrintStack();
     return 0;
 }
