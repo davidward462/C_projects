@@ -5,8 +5,10 @@
 // Basic vector operations
 typedef struct Vector // in 3D space
 {
-    int x, y, z;
-} Vector;
+    int x;
+    int y;
+    int z;
+}Vector;
 
 // pass struct by reference
 void SetVector(Vector *v, int xIn, int yIn, int zIn)

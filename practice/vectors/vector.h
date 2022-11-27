@@ -3,16 +3,18 @@
 
 // add prototypes for vector.c
 
-typedef struct Vector;
+typedef struct Vector{ int x,y,z; }Vector;
 
-void SetVector(vector *v, int x, int y, int z); 
+void SetVector(Vector *v, int x, int y, int z); 
 
-void ScalarMultiply(vector *v, int s); // v = v*s
+void ScalarMultiply(Vector *v, int s); // v = v*s
 
-void AddVector(vector *v, vector *u); // add u to v
+void AddVector(Vector *v, Vector *u); // add u to v
 
-bool VectorAreEqual(vector *v, vector *u); 
+bool VectorAreEqual(Vector *v, Vector *u); 
 
-void SubtractVector(vector *v, vector *u); // subtract u from v
+void SubtractVector(Vector *v, Vector *u); // subtract u from v
+
+void PrintVector(Vector *v);
 
 #endif

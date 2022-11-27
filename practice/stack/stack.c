@@ -1,47 +1,66 @@
 #include <stdio.h>
-#include <stdbool.h> // maybe won't use this
+#include "stack.h"
+#define STACK_SIZE 100
 
-void push(int *top, int value);
+int stack[STACK_SIZE];
+int top = 0;
 
-int pop(int *top);
-
-bool isFull(int *top);
-
-void printStack(int *stack, int *top);
-
-int main(void)
+void Push(int n)
 {
+    stack[top] = n;
+    top++;
+}
 
-    int myStack[100];
-    //int *top = myStack; // address
-    int top = 0; // index
-
-    push(top, 1);
-    push(top, 2);
-    push(top, 3);
-
-    printStack(myStack, top);
-
+int Pop()
+{
     return 0;
 }
 
-
-void printStack(int *stack, int *top)
+void ClearStack()
 {
-    int *p = top;
-    int i = 0;
-    while(i < 3)
+
+}
+
+int IsEmpty()
+{
+    if(top == 0)
     {
-        printf("%d\n", stack[i]);
-        //p--;
-        i++;
+        return 1;
+    }
+    else
+    {
+        return 0;
     }
 }
 
-void push(int *top, int value)
+int IsFull()
 {
-    *top = value;
-    top++;
+    if(top == STACK_SIZE)
+    {
+        return 0;
+    }
+    else
+    {
+        return 0;
+    }
 }
+
+void PrintStack()
+{
+    if(IsEmpty())
+    {
+        printf("stack is empty\n");
+    }
+    else
+    {
+        printf("\t<-\n");
+        for(int i = (top-1); i >= 0; i--)
+        {
+            printf("%d\n", stack[i]);
+        }
+    }
+}
+
+
 
 

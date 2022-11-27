@@ -18,7 +18,8 @@ int main(void)
 {
     printf("Begin testing...\n");
     
-    vector a;
+    Vector a;
+    SetVector(&a, 0, 0, 0);
 
     printf("End.\n");
     return 0;
