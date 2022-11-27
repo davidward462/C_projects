@@ -22,7 +22,8 @@ void Push(int n)
 {
     if(!IsFull())
     {
-        stack[top++] = n;
+        stack[top] = n;
+        top++;
     }
     else
     {
@@ -34,7 +35,9 @@ int Pop()
 {
     if(!IsEmpty())
     {
-        return stack[top--];
+        top--;
+        int popped = stack[top];
+        return popped;
     }
     else
     {
@@ -56,11 +59,13 @@ void PrintStack()
     }
     else
     {
+        printf("--------\n");
         printf("\t<-\n");
         for(int i = (top-1); i >= 0; i--)
         {
-            printf("%d\n", stack[i]);
+            printf("|%d\n", stack[i]);
         }
+        printf("--------\n");
     }
 }
 
