@@ -3,8 +3,7 @@
 
 int main()
 {
-    
-    PrintStack();
+    Pop();
     Push(20);
     Push(56);
     Push(100);

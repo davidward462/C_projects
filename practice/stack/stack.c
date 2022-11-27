@@ -2,47 +2,50 @@
 #include "stack.h"
 #define STACK_SIZE 100
 
+// Stack implemented using an array
+
 int stack[STACK_SIZE];
 int top = 0;
 
-void Push(int n)
-{
-    stack[top] = n;
-    top++;
-}
-
-int Pop()
-{
-    return 0;
-}
-
-void ClearStack()
-{
-
-}
-
 int IsEmpty()
 {
-    if(top == 0)
-    {
-        return 1;
-    }
-    else
-    {
-        return 0;
-    }
+    return (top == 0) ? 1 : 0; // return 1 if statement is true, 0 otherwise
 }
 
 int IsFull()
 {
-    if(top == STACK_SIZE)
+    return (top == STACK_SIZE) ? 1: 0;
+}
+
+
+void Push(int n)
+{
+    if(!IsFull())
     {
-        return 0;
+        stack[top++] = n;
     }
     else
     {
-        return 0;
+        printf("stack is full.\n");
     }
+}
+
+int Pop()
+{
+    if(!IsEmpty())
+    {
+        return stack[top--];
+    }
+    else
+    {
+        printf("stack is empty.\n");
+        return 0; // return 0 if stack is empty
+    }
+}
+
+void ClearStack()
+{
+    top = 0;
 }
 
 void PrintStack()
