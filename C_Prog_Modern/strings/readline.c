@@ -29,11 +29,15 @@ int countSpaces(const char *s)
 
 int main(void)
 {
-	char str[LENGTH +1];
-	printf("$ ");
-	readLine(str,LENGTH);
-	printf("%s\n", str);
-	printf("%d\n", countSpaces(str));
+	char str[LENGTH +1]; // init
+
+	while (1){
+		printf("$ "); // prompt
+		readLine(str,LENGTH);
+		//printf("%s\n", str);
+		//printf("%d", countSpaces(str));
+	}
+	
 
 	return 0;
 }
